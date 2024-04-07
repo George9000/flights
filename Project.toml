@@ -1,0 +1,33 @@
+name = "flights"
+uuid = "53a7e33d-a047-4ea7-b859-68d68a0b2c28"
+version = "0.1.0"
+authors = ["George9000 <thomaspg976@gmail.com>"]
+
+[deps]
+AnalysisUtils = "8af7f45d-2294-41af-b6f5-7400e12a87dc"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+CategoricalArrays = "324d7699-5711-5eae-9e2f-1d82baa6b597"
+Chain = "8be319e6-bccf-4806-a6f7-6fae938471bc"
+ColorSchemes = "35d6a980-a343-548e-a6ea-1d62b119f2f4"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+DataSkimmer = "54a5dec1-bae8-447e-bd66-474f7865e6c6"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Deneb = "b5a61f88-a05b-4725-9526-4eca17cec623"
+FreqTables = "da1fdf0e-e0ff-5433-a45f-9bb5ff651cb1"
+MethodChains = "8273b447-2325-479c-bd8f-672236b360ca"
+Missings = "e1d29d7a-bbdc-5cf2-9ac0-f12de2c33e28"
+PartialFuns = "f26b6392-6076-4cfd-b91e-dd0fce713497"
+Serialization = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+TableTransforms = "0d432bfd-3ee1-4ac1-886a-39f05cc69a3e"
+UnicodePlots = "b8865327-cd53-5732-bb35-84acbb429228"
+
+[compat]
+AnalysisUtils = "0.1.0"
+CairoMakie = "0.11.10"
+ColorSchemes = "3.24.0"
+Deneb = "0.3.0"
+MethodChains = "0.1.0"
+PartialFuns = "0.1.0"
