@@ -50,7 +50,7 @@ readallarrival(inputp, [aaarrivals, deltaarrivals, jbarrivals, unarrivals]).{
     show(stdout, "text/plain", skim(it))    pageddf(it, 1, 20, 5)
     them
 }
-# What is the most frequent tail_number?
+# What is the most frequent tail_number? airport?
 readallarrival(inputp, [aaarrivals, deltaarrivals, jbarrivals, unarrivals]).{
     groupby(it, :tail_number)           groupby(it, :origin_airport)
     combine(it, nrow)                   combine(it, nrow)
@@ -78,16 +78,16 @@ readallarrival(inputp, [aaarrivals, deltaarrivals, jbarrivals, unarrivals]).{
 storearrivals(inputp, [aaarrivals, deltaarrivals, jbarrivals, unarrivals], "allarrivals.serial")
 
 retrievearrivals(inputp, "allarrivals.serial").{
-    Data(it) * Mark(:bar) * Facet(row=:carrier_code) * Encoding(
+    Data(it) * Mark(:bar) * Facet(column=:carrier_code) * Encoding(
         x=field("arrival_delay_minutes:Q", bin=(;maxbins=50)),
         y="count()")
 }
 
 retrievearrivals(inputp, "allarrivals.serial").{
 rainclouds(it.carrier_code, it.arrival_delay_minutes;
-    xlabel = "Carriers", ylabel = "Arrival delay, min",
+    # xlabel = "Carriers", ylabel = "Arrival delay, min",
     plot_boxplots = true, cloud_width=0.5, clouds=hist, hist_bins=100,
-    xticks = ([1, 2, 3, 4], string.(sort(unique(it.carrier_code)))),
+    # xticks = ([1, 2, 3, 4], string.(sort(unique(it.carrier_code)))),
     color = Makie.wong_colors()[indexin(it.carrier_code, sort(unique(it.carrier_code)))])
 }
 

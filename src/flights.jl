@@ -92,7 +92,11 @@ function arrivaldelayviol(df, ppath, pname; font = "TheSansMono-W5Regular")
     for (indx, f) in enumerate(categories)
         delaym = subset(df, :carrier_code => ByRow(==(f)))[:, :arrival_delay_minutes]
         carrier = fill(indx, length(delaym))
-        violin!(ax, carrier, delaym; width = 0.35, color = (colors[indx], 0.45), strokecolor = colors[indx], show_median = true, mediancolor = :black)
+        carrier2 = carrier .+ rand(length(delaym)) .+ -0.5
+        scatter!(ax, carrier2, delaym; color = (colors[indx], 0.25), markersize = 2)
+        # violin!(ax, carrier, delaym; width = 0.35, color = (:grey, 0.9), strokecolor = colors[indx], show_median = true, mediancolor = :black)
+        violin!(ax, carrier, delaym; width = 0.35, color = (colors[indx], 0.9), strokecolor = colors[indx], show_median = true, mediancolor = :black)
+        ylims!(ax, -100, 100)
     end
     save(joinpath(ppath, pname), fig; px_per_unit = 3)
 end

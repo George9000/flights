@@ -26,7 +26,7 @@ UnicodePlots = "b8865327-cd53-5732-bb35-84acbb429228"
 
 [compat]
 AnalysisUtils = "0.1.0"
-CairoMakie = "0.11.10"
+CairoMakie = "0.12.0"
 ColorSchemes = "3.24.0"
 Deneb = "0.3.0"
 MethodChains = "0.1.0"
